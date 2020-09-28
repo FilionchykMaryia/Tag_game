@@ -1,0 +1,38 @@
+<script>
+	let arr = [1, 5, 8, 3, 7, 9, 10, 2, 15, 12, 0, 4, 6, 11, 13, 14];
+	
+function controlRandom (arr){
+	let sum = 0;
+
+	function sumCompare (arr){
+			for(let i = 0; i <= arr.length; i++){
+				let item =	arr[i];
+				for(let j = i+1; j <= arr.length; j++){
+					let itemNext = arr[j];
+					if(item > itemNext) { sum +=1 };
+				}
+			}
+		return sum;
+	}
+
+	function findCellZero(arr, sumCompare) {
+		arr.forEach((item, i) => {
+				if(!item) {
+					sum += Math.ceil(i / 3);
+				}
+			});
+		return sum;
+	}
+	
+	sumCompare(arr);
+	findCellZero(arr, sumCompare);
+	
+	return (!(sum % 2)) ? true : false;
+			
+}
+
+console.log(controlRandom(arr));
+
+		
+
+</script>
